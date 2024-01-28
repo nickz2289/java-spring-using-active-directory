@@ -1,0 +1,62 @@
+<div class="menu-samping px-3 overflow-y-scroll">
+    <img class="w-100 h-auto p-2 px-3" src="" alt="" th:src="@{/image/Logo-Bank-Mandiri.png}">
+    <h5 class="text-warning px-3">MENU</h5>
+    <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/}">
+            <i class="lni lni-dashboard text-black-50 me-2"></i> Dashboard
+        </a>
+        <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/dashboard}">
+            <i class="lni lni-archive text-black-50 me-2"></i>File Repository
+        </a>
+        <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/register}">
+            <i class="lni lni-briefcase text-black-50 me-2"></i>Project Management
+        </a>
+    </div>
+    <hr>
+    <div th:if="${userRole} == '[APPROLE_Admin]'">
+        <h5 class="text-warning px-3">OPEX</h5>
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/}">
+                <i class="lni lni-dashboard text-black-50 me-2"></i>OPEX Dashboard
+            </a>
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/dashboard}">
+                <i class="lni lni-paperclip text-black-50 me-2"></i>Data Pengadaan (3GL)
+            </a>
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/register}">
+                <i class="lni lni-page-break text-black-50 me-2"></i>Monitoring Non-GL
+            </a>
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/register}">
+                <i class="lni lni-bookmark-alt text-black-50 me-2"></i>Reimbursment
+            </a>
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/register}">
+                <i class="lni lni-exit-up text-black-50 me-2"></i>Uang Muka
+            </a>
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/pettycash}">
+                <i class="lni lni-wallet text-black-50 me-2"></i>Petty Cash
+            </a>
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/register}">
+                <i class="lni lni-connectdevelop text-black-50 me-2"></i>Maintenance (ATS+JL)
+            </a>
+        </div>
+        <hr>
+        <h5 class="text-warning px-3">CAPEX</h5>
+        <div class="list-group list-group-flush">
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/}">
+                <i class="lni lni-dashboard text-black-50 me-2"></i>Dashboard CAPEX
+            </a>
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/dashboard}">
+                <i class="lni lni-bar-chart text-black-50 me-2"></i>Realisasi Inisiatif
+            </a>
+            <a href="#" class="list-group-item list-group-item-action border-0" th:href="@{/register}">
+                <i class="lni lni-radio-button text-black-50 me-2"></i>CAPEX Calendar
+            </a>
+        </div>
+        <hr>
+    </div>
+
+    <div class="list-group list-group-flush mb-3">
+        <form th:action="@{/logout}" method="post">
+            <button class="list-group-item list-group-item-action border-0" type="submit" onclick="return confirm('Apakah kamu yakin?')" ><i class="lni lni-share text-black-50 me-2"></i>Sign out</button>
+        </form>
+    </div>
+</div>
